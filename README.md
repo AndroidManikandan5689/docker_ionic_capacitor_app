@@ -112,6 +112,46 @@ docker-compose up --build
 
 ---
 
+1. Clean Up Unused Docker Images, Containers, Volumes, and Networks
+To remove all unused images, containers, volumes, and networks (dangling resources), use the following command:
+
+bash
+Copy
+Edit
+docker system prune -a
+This will:
+
+Remove all stopped containers
+Remove all unused networks
+Remove all dangling images (images not tagged or not used by any container)
+Remove all unused volumes (volumes that are not referenced by any containers)
+Warning: This will delete a lot of data, including unused images, which might take up considerable space.
+
+2. Remove Only Dangling Images
+To remove dangling (unused) images only (images that are not associated with a container):
+
+docker image prune
+To also remove unused images (not just dangling images), use the -a flag:
+
+docker image prune -a
+3. Remove Unused Containers
+To remove stopped containers:
+
+docker container prune
+4. Remove Unused Volumes
+To remove unused volumes:
+
+docker volume prune
+5. Remove Unused Networks
+To remove unused networks:
+
+docker network prune
+6. Remove All Unused Data
+If you want to ensure that everything unused is removed, you can use the following:
+
+docker system prune --volumes
+This will remove all unused containers, networks, images, and volumes.
+
 ## Summary
 - Use Docker to containerize your Ionic Capacitor app.
 - Serve the app using Nginx inside a Docker container.
