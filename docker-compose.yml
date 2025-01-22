@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  ionic-capacitor-app:
+    build:
+      context: .
+    ports:
+      - "8080:80"
+    container_name: ionic_capacitor_container
