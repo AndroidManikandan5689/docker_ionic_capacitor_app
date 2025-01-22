@@ -115,9 +115,6 @@ docker-compose up --build
 1. Clean Up Unused Docker Images, Containers, Volumes, and Networks
 To remove all unused images, containers, volumes, and networks (dangling resources), use the following command:
 
-bash
-Copy
-Edit
 docker system prune -a
 This will:
 
